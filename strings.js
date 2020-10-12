@@ -2,13 +2,8 @@
 
 // 1\35 Напишите функцию stringToarray(str), которая преобразует строку в массив слов
 
-/*
 var str = 'Каждый охотник желает знать';
 function stringToarray(str) {
-
-// Ваш код
-
-};
-
-var arr = stringToarray(str);
-*/
+    return str.split(' ') // если убрать пробел в кавычках, тогда массив будет из букв, а не из слов
+}
+console.log(stringToarray(str))
