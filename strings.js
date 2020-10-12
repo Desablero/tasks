@@ -24,7 +24,7 @@ console.log(delete_characters(str,14))
 
 // 3\35 Напишите функцию insert_dash(str), которая принимает строку str в качестве аргумента и вставляет тире (-)
 // между словами. При этом все символы строки необходимо перевести в верхний регистр.
-
+/*
 var str = "HTML JavaScript PHP";
 function insert_dash(str) {
     // return str.trim().toUpperCase().split(' ').join('-')
@@ -33,4 +33,16 @@ function insert_dash(str) {
 console.log(insert_dash(str))
 // Метод из ответа: return str.trim().toUpperCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
 // replace(/\s/g, "-"); заменяет пробелы на "-"
+ */
 
+// 4\35 Напишите функцию, которая принимает строку в качестве аргумента и преобразует регистр первого символа строки
+// из нижнего регистра в верхни
+
+var str = "string not starting with capital";
+
+function cursive_letter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(cursive_letter(str))
+// Мда. Редактор нечаянно написал готовый ответ в вопрос... Впрочем, я так и планировал использовать только index
+// первого символа вместо перевода всей строки в массив.
