@@ -111,13 +111,27 @@ zeros(145,5,'+')
 // }
 //======================================================================================================================
 // 9\35 Напишите функцию comparison(str1, str2), которая сравнивает строки без учёта регистра символов
-
+/*
 function comparison(str1, str2) {
     var equivalent = str1.toLowerCase() === str2.toLowerCase()
     console.log(equivalent)
 }
 comparison('string', 'StRiNg')
 comparison('ABCDe', 'AbcdW')
-
+*/
 // Слишком изи.
 //======================================================================================================================
+// 10\35 Напишите функцию insensitive_search(str1, str2), которая осуществляет поиск подстроки str2 в
+// строке str1 без учёта регистра символов
+
+function insensitive_search(str1, str2) {
+    reg = new RegExp(str2,'ig')
+    str1.match(reg)?console.log('Содержит'):console.log('Не содержит')
+}
+insensitive_search('Изучаю JavaScript', 'javascript')
+insensitive_search('Изучаю JavaScript', 'javascriptS')
+
+// Решил быстро, но не без помощи MDN. В ответах использ. метод search:
+// let search_str = new RegExp(str2, "ig");
+// var result = str1.search(search_str);
+// return (result > 0) ? "Соответствует" : "Не соответствует";
