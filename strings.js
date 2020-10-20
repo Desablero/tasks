@@ -110,3 +110,14 @@ zeros(145,5,'+')
 //   return (sign === undefined || sign === '') ? num_zer + num + '' : sign + num_zer + num +'';
 // }
 //======================================================================================================================
+// 9\35 Напишите функцию comparison(str1, str2), которая сравнивает строки без учёта регистра символов
+
+function comparison(str1, str2) {
+    var equivalent = str1.toLowerCase() === str2.toLowerCase()
+    console.log(equivalent)
+}
+comparison('string', 'StRiNg')
+comparison('ABCDe', 'AbcdW')
+
+// Слишком изи.
+//======================================================================================================================
