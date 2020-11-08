@@ -1,5 +1,7 @@
 // Link: http://wm-school.ru/js/string_exercises.php
 
+const { endianness } = require("os");
+
 // 1\35 Напишите функцию stringToarray(str), которая преобразует строку в массив слов
 /*
 var str = 'Каждый охотник желает знать';
@@ -209,3 +211,19 @@ console.log(repeatStr('Hello!', 5))
  */
 // #EasyFast
 //======================================================================================================================
+// 14/35 Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу
+
+var pathname = "/home/user/dir/file1.txt";
+
+function path(pathname) {
+    let result = []
+    pathnameRev = pathname.split('').reverse() // положили в массив и перевернули
+    for (i=0; i<pathnameRev.length; i++) {
+        if (pathnameRev[i] !== '/') { // если итератор != '/' - ложим в результ. массив
+            result.push(pathnameRev[i])
+        } else {i = i+pathnameRev.length} // если равен, значит нашли полное имя файла, выходим из цикла
+    }
+    console.log(result.reverse().join(''));
+};
+
+console.log(path(pathname));
