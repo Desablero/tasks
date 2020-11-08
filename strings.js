@@ -214,16 +214,53 @@ console.log(repeatStr('Hello!', 5))
 // 14/35 Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу
 
 var pathname = "/home/user/dir/file1.txt";
+// Велосипедный метод: 
+// function path(pathname) {
+//     let result = []
+//     pathnameRev = pathname.split('').reverse() // положили в массив и перевернули
+//     for (i=0; i<pathnameRev.length; i++) {
+//         if (pathnameRev[i] !== '/') { // если итератор != '/' - ложим в результ. массив
+//             result.push(pathnameRev[i])
+//         } else {i = i+pathnameRev.length} // если равен, значит нашли полное имя файла, выходим из цикла
+//     }
+//     console.log(result.reverse().join(''));
+// };
+// console.log(path(pathname));
 
+// Метод 
 function path(pathname) {
-    let result = []
-    pathnameRev = pathname.split('').reverse() // положили в массив и перевернули
-    for (i=0; i<pathnameRev.length; i++) {
-        if (pathnameRev[i] !== '/') { // если итератор != '/' - ложим в результ. массив
-            result.push(pathnameRev[i])
-        } else {i = i+pathnameRev.length} // если равен, значит нашли полное имя файла, выходим из цикла
-    }
-    console.log(result.reverse().join(''));
+    index = pathname.lastIndexOf('/')
+    return pathname = pathname.slice(index+1, pathname.length)
 };
-
 console.log(path(pathname));
+
+// Ответ банален и прост: function path(pathname) {
+//   var name = pathname.split("/").pop(); return name;}
+
+
+
+//======================================================================================================================
+// 15/35 Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str 
+// и определяет заканчивается ли строка символами подстроки
+
+var str = "Каждый охотник желает знать"; 
+var str1 = "скрипт";
+var str2 = "знать";
+
+String.prototype.endsWith = function(substring) {
+    indexOfLastSpace = substring.lastIndexOf(' ') // находим последний пробел который отделяет последнее слово
+    substring = substring.slice(indexOfLastSpace+1, substring.length) // отрезаем лишнее оставляя только слово
+    if (substring === str) { // сравниваем слова 
+        console.log(true);
+    }
+    else {
+        console.log(false);
+    }
+};
+console.log(str.endsWith(str));
+
+// #EasyFast
+// Ответ элегантный: String.prototype.endsWith = function(substring) {
+//   if(substring.length > this.length) return false;
+//   return this.substr(this.length - substring.length) === substring;};
+//======================================================================================================================
