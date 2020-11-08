@@ -212,33 +212,30 @@ console.log(repeatStr('Hello!', 5))
 // #EasyFast
 //======================================================================================================================
 // 14/35 Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу
-
+/*
 var pathname = "/home/user/dir/file1.txt";
-// Велосипедный метод: 
-// function path(pathname) {
-//     let result = []
-//     pathnameRev = pathname.split('').reverse() // положили в массив и перевернули
-//     for (i=0; i<pathnameRev.length; i++) {
-//         if (pathnameRev[i] !== '/') { // если итератор != '/' - ложим в результ. массив
-//             result.push(pathnameRev[i])
-//         } else {i = i+pathnameRev.length} // если равен, значит нашли полное имя файла, выходим из цикла
-//     }
-//     console.log(result.reverse().join(''));
-// };
-// console.log(path(pathname));
+// "Велосипедный" метод: 
+function path(pathname) {
+    let result = []
+    pathnameRev = pathname.split('').reverse() // положили в массив и перевернули
+    for (i=0; i<pathnameRev.length; i++) {
+        if (pathnameRev[i] !== '/') { // если итератор != '/' - ложим в результ. массив
+            result.push(pathnameRev[i])
+        } else {i = i+pathnameRev.length} // если равен, значит нашли полное имя файла, выходим из цикла
+    }
+    console.log(result.reverse().join(''));
+};
+console.log(path(pathname));
 
-// Метод 
+// Метод проще: (пришёл в голову когда решал 15-ю задачу)
 function path(pathname) {
     index = pathname.lastIndexOf('/')
     return pathname = pathname.slice(index+1, pathname.length)
 };
 console.log(path(pathname));
-
+*/
 // Ответ банален и прост: function path(pathname) {
 //   var name = pathname.split("/").pop(); return name;}
-
-
-
 //======================================================================================================================
 // 15/35 Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str 
 // и определяет заканчивается ли строка символами подстроки
@@ -263,4 +260,4 @@ console.log(str.endsWith(str));
 // Ответ элегантный: String.prototype.endsWith = function(substring) {
 //   if(substring.length > this.length) return false;
 //   return this.substr(this.length - substring.length) === substring;};
-//======================================================================================================================
+//====================================================================================================================== 
