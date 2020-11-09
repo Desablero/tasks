@@ -221,7 +221,7 @@ console.log(expand(arr2));
 // Отет: var i = 0; while(i < arr.length) { arr = arr.reduce(function(a, b) {return a.concat(b);},[]); i++;}return arr;
 //======================================================================================================================
 // 13/36 Напишите функцию union, которая возвращает массив состоящий только из уникальных элементов из каждого массива
-
+/*
 var array1 = [5, 2, 1, -10, 8, 8];
 var array2 = [5, 2, 1, -9, 3, 7];
 
@@ -235,6 +235,31 @@ var union = function (array1, array2) {
 }
 
 console.log(union(array1, array2));
-
+*/
 // #EasyFast
 // Ответ даже не буду приводить, т.к. он большой и мудрёный
+//======================================================================================================================
+// 14/36 Напишите функцию union, которая возвращает массив, содержащий все элементы arr1, 
+// которые не находятся в arr2 и наоборот. like: [a,3,4,b]
+
+var arr1 = [1, 2, 'a'];
+var arr2 = [1, 2, 3, 4, 'b'];  
+
+function arrayDiff(arr1, arr2) {
+    let result = []
+    arr1.forEach((elem) => {
+        if (!arr2.includes(elem)) {
+            result.push(elem)
+        }
+    })
+    arr2.forEach((elem) => {
+        if (!arr1.includes(elem)) {
+            result.push(elem)
+        }
+    }) 
+return result
+}
+
+console.log(arrayDiff(arr1,arr2))
+
+// Easy. 
