@@ -1,7 +1,5 @@
 // Link: http://wm-school.ru/js/string_exercises.php
 
-const { endianness } = require("os");
-
 // 1\35 Напишите функцию stringToarray(str), которая преобразует строку в массив слов
 /*
 var str = 'Каждый охотник желает знать';
@@ -239,7 +237,7 @@ console.log(path(pathname));
 //======================================================================================================================
 // 15/35 Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str 
 // и определяет заканчивается ли строка символами подстроки
-
+/*
 var str = "Каждый охотник желает знать"; 
 var str1 = "скрипт";
 var str2 = "знать";
@@ -255,9 +253,28 @@ String.prototype.endsWith = function(substring) {
     }
 };
 console.log(str.endsWith(str));
-
+*/
 // #EasyFast
 // Ответ элегантный: String.prototype.endsWith = function(substring) {
 //   if(substring.length > this.length) return false;
 //   return this.substr(this.length - substring.length) === substring;};
 //====================================================================================================================== 
+// 16/35 Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или до 
+// указанного символа char в зависимости от параметра pos
+
+var str = 'Астрономия — Наука о небесных телах';
+
+function getSubstr(str, char, pos) {
+    charIndex = str.indexOf(char)
+    if (pos === 'after') {
+        return (str.split('').slice(++charIndex, Infinity).join(''))
+    } else if (pos === 'before') {
+        return (str.split('').slice(0, charIndex).join(''))
+    }
+};
+
+console.log(getSubstr(str, '—', 'after'));
+console.log(getSubstr(str, 'Н', 'before'));
+
+// #EasyFast. Ответ идентичный моему.
+//======================================================================================================================
