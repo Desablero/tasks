@@ -261,7 +261,7 @@ console.log(str.endsWith(str));
 //====================================================================================================================== 
 // 16/35 Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или до 
 // указанного символа char в зависимости от параметра pos
-
+/*
 var str = 'Астрономия — Наука о небесных телах';
 
 function getSubstr(str, char, pos) {
@@ -275,6 +275,24 @@ function getSubstr(str, char, pos) {
 
 console.log(getSubstr(str, '—', 'after'));
 console.log(getSubstr(str, 'Н', 'before'));
-
+*/
 // #EasyFast. Ответ идентичный моему.
+//======================================================================================================================
+// 17/35 Напишите функцию insert(str, substr, pos), которая вставляет подстроку substr в указханную позицию
+// pos строки str. По умолчанию подстрока вставляется в начало строки
+
+function insert(str, substr, pos = 0) {
+    if (pos === 0) {
+        return str = substr + str
+    } else if (pos !== 0 && typeof pos === 'number') {
+        str = str.split('')
+        str[pos] = str[pos] + substr
+        return str.join('')
+    } else {console.log('Print pos of number!')} // проверка на валидность pos
+};
+
+console.log(insert('Казнить нельзя', "Помиловать ", ))
+// #EasyFast. Ответ получше будет: var array = str.split('');
+//   array.splice(pos, 0, substr);
+//   return array.join('');
 //======================================================================================================================
