@@ -288,16 +288,43 @@ console.log(compareNumbers(numbers))
 */
 // Знал что существует "пузырьковый", но пришлось гуглить как выглядит каркас. 
 //======================================================================================================================
-// 16/36
-var arr1=[7, 'z', 'z', 'z', 3, 7, 'z', 7, 'z', 3, 5, 9, 7];  
+// 16/36 Напишите код, который находит наиболее часто используемый элемент массива
+/*
+
+var arr1 = [7, 'z', 'z', 'z', 3, 7, 'z', 7, 'z', 3, 5, 9, 7];
 let result = []
-    arr1 = arr1.sort();
-        for (i=0; i<arr1.length; i++) {
-            if(typeof arr1[i] !== 'number') {
-                muxNum = arr1[i-1]
-                break     
-            }        
-        }
-        console.log(muxNum)
+arr1 = arr1.sort();
+for (i = 0; i < arr1.length; i++) {
+    if (typeof arr1[i] !== 'number') {
+        muxNum = arr1[i - 1]
+        break
+    }
+}
+console.log(muxNum)
+
+ */
 // #EasyFast
 //======================================================================================================================
+// 17/36  Напишите функцию sumOfSquares(arr), которая возвращает сумму квадратов значений массива
+
+function sumOfSquares(arr) {
+    // Метод №1. С двумя циклами
+    /*
+
+    result = []
+    for (i = arr.length-1; i>-1; i--) {
+        arr[i] = arr[i]*arr[i]
+        // Или так arr[i] = Math.pow(arr[i],2)
+    }
+    const reducer = (acc, cur) => acc + cur;
+    console.log(arr.reduce(reducer))
+
+     */
+    // Метод №2.
+    const reducer = (acc, cur) => acc + cur * cur;
+    return arr.reduce(reducer)
+
+}
+console.log(sumOfSquares([1, 2, 3, 4, 5]));
+
+// Easy. Ответ идентичный моему
