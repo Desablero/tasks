@@ -489,6 +489,7 @@ console.log(res2)
 // #EasyFast. Ответ идентичный.
 // ====================================================================================================================>
 // 24/36 Напишите функцию removeItem(arr, num), которая удаляет определенный элемент из массива.
+/*
 
 function removeItem(arr, num) {
     while (arr.includes(num)) {
@@ -499,5 +500,18 @@ function removeItem(arr, num) {
 }
 console.log(removeItem([5, 3, 5, 7, 8, 5], 5)); // [3,7,8]
 
+ */
 // #EastFast. Ответ идентичный, только через for
+// ====================================================================================================================>
+// 25/36 Напишите функцию randomElement(arr), которая возвращает случайный элемент из массива
+
+function randomElement(arr) {
+    min = 0
+    max = arr.length
+    idx = Math.floor(Math.random() * (max - min) + min)
+    console.log(arr[idx])
+}
+var arr = [24, 45, 22, 35, 43];
+console.log(randomElement(arr)); // 22
+// #EasyFast. Ответ: return arr[Math.floor(Math.random()*arr.length)];
 // ====================================================================================================================>
