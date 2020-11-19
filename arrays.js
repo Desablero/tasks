@@ -504,6 +504,7 @@ console.log(removeItem([5, 3, 5, 7, 8, 5], 5)); // [3,7,8]
 // #EastFast. Ответ идентичный, только через for
 // ====================================================================================================================>
 // 25/36 Напишите функцию randomElement(arr), которая возвращает случайный элемент из массива
+/*
 
 function randomElement(arr) {
     min = 0
@@ -513,5 +514,18 @@ function randomElement(arr) {
 }
 var arr = [24, 45, 22, 35, 43];
 console.log(randomElement(arr)); // 22
+
+ */
 // #EasyFast. Ответ: return arr[Math.floor(Math.random()*arr.length)];
 // ====================================================================================================================>
+// 26/36 Напишите функцию arrayFilled(len, value), которая возвращает массив с заданным количеством len элементов value.
+
+function arrayFilled(len, value) {
+    arr = []
+    arr.length = len
+    arr.fill(value)
+    return arr
+}
+// #EasyFast
+console.log(arrayFilled(5, 1))   // [1,1,1,1,1]
+console.log(arrayFilled(4, 12)) // [12,12,12,12]
