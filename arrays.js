@@ -440,6 +440,7 @@ function findCouple(arr, num) {
 // ====================================================================================================================>
 // 22/36 Напишите функцию propertyValue(array, key), которая принимает в качестве аргументов массив объектов
 // и имя свойства, а затем возвращает все значения данного свойства из массива объектов.
+/*
 
 var litmir = [
     { author: 'Хэленка', title: 'Улетела сказка'},
@@ -454,7 +455,33 @@ function propertyValue(array, key) {
 }
 propertyValue(litmir, 'title');  // Улетела сказка,Восстание Аркан,Золотая лилия
 propertyValue(litmir, 'author'); // Хэленка,Коул Кресли,Райчел Мид
+
+ */
 // #Easy. Делал долго из-за незнания синтаксиса. Делал arr[i].key в итоге - undef. Но на форуме нашёл элегантную запись:
 // for (item of array) {console.log(item[key])}. А вот ответ многострочный и очень заумный.
 // ====================================================================================================================>
+// 23/36 Напишите функцию startingSubstring(arr), которая возвращает общую начальную подстроку в массиве строк
 
+var arr1 = ['Капуста', 'Капитал'];
+var arr2 = ['Репа', 'Редиска'];
+function startingSubstring(arr) {
+    result = []
+    str1 = arr[0]
+    str2 = arr[1]
+    str1 = str1.split('')
+    str2 = str2.split('')
+    bigger = str1.length>str2.length?str1.length:str2.length
+    i = 0
+    while (str1[i] === str2[i]) {
+        result.push(str1[i])
+        i++
+    }
+    return result.join('')
+}
+var res1 = startingSubstring(arr1);
+var res2 = startingSubstring(arr2);
+console.log(res1)
+console.log(res2)
+
+// #EasyFast. Ответ идентичный.
+// ====================================================================================================================>
