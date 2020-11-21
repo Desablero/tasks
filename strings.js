@@ -479,6 +479,7 @@ console.log(removeDuplicate(str)) // вишня, груша, слива
 // ====================================================================================================================>
 // 27/35 Напишите функцию delete_first_occurrence(str, subst), которая удаляет из строки str первое вхождение
 // подстроки substr.
+/*
 
 var str = "вишня, груша, слива, груша";
 
@@ -490,5 +491,23 @@ function delete_first_occurrence(str, substr) {
 };
 console.log(delete_first_occurrence(str, 'груша')); // 'вишня, слива, груша'
 
+ */
 // #EasyFast. Ответ получше будет:  return str.replace((subst + ', '), '');
+// ====================================================================================================================>
+// 28/35 Напишите функцию replaceAll(find, replace, str), которая заменяет в строке str все вхождение подстроки
+// find на подстроку replace.
+
+
+var str = 'abc def def lom abc abc def';
+
+function replaceAll(find, replace, str) {
+    while (str.includes(find)) {
+        str = str.replace(find, replace)
+    }
+    return str
+}
+console.log(replaceAll('abc', 'x', str)); // 'x def def lom x x def'
+
+
+// #EastFast. Ответ: идентичный.
 // ====================================================================================================================>
