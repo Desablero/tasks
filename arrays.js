@@ -519,6 +519,7 @@ console.log(randomElement(arr)); // 22
 // #EasyFast. Ответ: return arr[Math.floor(Math.random()*arr.length)];
 // ====================================================================================================================>
 // 26/36 Напишите функцию arrayFilled(len, value), которая возвращает массив с заданным количеством len элементов value.
+/*
 
 function arrayFilled(len, value) {
     arr = []
@@ -526,6 +527,29 @@ function arrayFilled(len, value) {
     arr.fill(value)
     return arr
 }
-// #EasyFast
+
 console.log(arrayFilled(5, 1))   // [1,1,1,1,1]
 console.log(arrayFilled(4, 12)) // [12,12,12,12]
+
+*/
+// #EasyFast. Ответ: var array = [];
+//   for(len; len > 0; len--) {    array.push(value);  }  return array;
+// ====================================================================================================================>
+// 27/36 Напишите функцию moveElement(arr,from,to), которая позволяет переместить элемент массива из позиции 
+// from в позицию to.
+
+function moveElement(arr,from,to) {
+    buff = arr[from] // буверим значение перемещаемого элемента
+    arr.splice(from,1) // вырезаем перемещаемый элемент
+    // разделяем масив на две части в месте установки буфера
+    arr1 = arr.slice(0, to) 
+    arr2 = arr.slice(to, Infinity)
+    // закидываем в первую часть массива наш буфер, а потом и второй массив со спред оператором
+    arr1.push(buff)
+    arr1.push(...arr2)
+    return arr1
+}
+    
+var arr = [ 'a', 'b', 'c', 'd', 'e'];
+console.log(moveElement(arr,3,1)); // ["a", "d", "b", "c", "e"]
+// #Easy. Ответ: arr.splice(to,0,arr.splice(from,1)[0]); 
