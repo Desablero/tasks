@@ -537,6 +537,7 @@ console.log(arrayFilled(4, 12)) // [12,12,12,12]
 // ====================================================================================================================>
 // 27/36 Напишите функцию moveElement(arr,from,to), которая позволяет переместить элемент массива из позиции 
 // from в позицию to.
+/*
 
 function moveElement(arr,from,to) {
     buff = arr[from] // буверим значение перемещаемого элемента
@@ -549,7 +550,24 @@ function moveElement(arr,from,to) {
     arr1.push(...arr2)
     return arr1
 }
-    
 var arr = [ 'a', 'b', 'c', 'd', 'e'];
 console.log(moveElement(arr,3,1)); // ["a", "d", "b", "c", "e"]
-// #Easy. Ответ: arr.splice(to,0,arr.splice(from,1)[0]); 
+*/
+
+// #Easy. Ответ: arr.splice(to,0,arr.splice(from,1)[0]);
+// ====================================================================================================================>
+// 28/36 Напишите функцию generateNumbers(start, len), которая генерирует массив заданной длины len,
+// заполненный целыми числами, где каждое число больше предыдущего на единицу.
+
+function generateNumbers(start, len) {
+let arr = []
+    arr.length = len
+    for (i=0; i<arr.length; i++) {
+        arr[i] = start++
+    }
+    return arr
+}
+console.log(generateNumbers(0, 5));  // 0,1,2,3,4
+console.log(generateNumbers(-5, 4)); // -5,-4,-3,-2
+
+// #EasyFast. 
