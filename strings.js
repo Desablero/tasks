@@ -524,3 +524,12 @@ console.log(decimalToHexString('12312313'));
 
  */
 // ====================================================================================================================>
+// 30/35 Напишите функцию findWord(word, str), которая проверяет, существует ли в строке str слова word
+
+var str = 'abc def ghi jkl mno pqr stu';
+
+function findWord(word, str) {
+    str.includes(word) ? console.log(true) : console.log(false)
+}
+console.log(findWord('mno', str)); // true
+// Super #EasyFast. Ответ: return RegExp('\\b'+ word +'\\b').test(str)
