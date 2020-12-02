@@ -525,11 +525,34 @@ console.log(decimalToHexString('12312313'));
  */
 // ====================================================================================================================>
 // 30/35 Напишите функцию findWord(word, str), которая проверяет, существует ли в строке str слова word
+/*
 
 var str = 'abc def ghi jkl mno pqr stu';
-
 function findWord(word, str) {
     str.includes(word) ? console.log(true) : console.log(false)
 }
 console.log(findWord('mno', str)); // true
 // Super #EasyFast. Ответ: return RegExp('\\b'+ word +'\\b').test(str)
+
+ */
+// ====================================================================================================================>
+// 31/35 Создайте метод объекта String startsWith(), который определяет, начинается ли строка символами другой строки,
+// возвращая, соотвественно, true или false.
+/*
+var str = 'abc def ghi  jkl mno pqr stu';
+String.prototype.startsWith = function(start) {
+    const reg = new RegExp(start,'mig') // регулярное выражение с использованием переменной
+    // если вырезав из this (str) переменую start с кол-вом символов длины start'a, и это будет = start, тогда тру
+    if (this.slice(reg,start.length) === start) return  true
+    else return false
+};
+console.log(str.startsWith('abc')); // true
+
+// Решить получилось, но чисто интуинивно. У меня впервые такое, код который я написал рабочий, но я не совсем понимаю
+// как он работает.
+// Ответ: str = String(str);
+//    let regex = new RegExp('^' + start, 'g'),
+//        res = regex.test(str);
+//    return res;
+*/
+// ====================================================================================================================>
